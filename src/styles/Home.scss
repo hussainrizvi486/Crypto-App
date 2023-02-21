@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@300;400;800;900&family=Bebas+Neue&family=Kavoon&display=swap');
+
+.pg-home-main {
+    padding: 0;
+
+    section {
+        height: inherit;
+        width: 100%;
+        padding: 3% 0 0 0;
+
+        >div:first-of-type {
+            display: flex;
+            justify-content: center;
+        }
+
+        img {
+            width: 35vmax;
+            object-fit: contain;
+        }
+
+
+        >.home-pg-text {
+            >h1 {
+                color: white;
+                font-family: 'Alegreya Sans SC', sans-serif;
+                text-align: center;
+                font-weight: 400;
+                font-size: 2.4vmax;
+                letter-spacing: 5px;
+
+                >span {
+                    color: #ffc400;
+                }
+            }
+        }
+
+        .btn-group {
+            width: 100%;
+            padding: 1rem 0;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+
+            a {
+                font-size: small;
+                color: #36301e;
+                background-color: #ffc400;
+                padding: 0.5rem;
+                border-radius: 5px;
+                font-weight: bold;
+                transition: all .2s;
+
+                &:hover {
+                    background-color: #b88d02;
+                }
+            }
+
+
+        }
+
+        @media (max-width: 768px) {
+            width: 100%;
+        }
+
+        @media (max-width: 500px) {
+            width: 100%;
+            padding: 15% 15%;
+        }
+    }
+}

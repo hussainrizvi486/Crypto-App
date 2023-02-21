@@ -1,0 +1,112 @@
+nav {
+    height: 10vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+
+    >h1 {
+        font-size: 2.8vmax;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 800;
+        color: #ffd600;
+
+        @media (max-width: 768px) {
+            font-size: 4vmax;
+        }
+    }
+
+    >ul {
+        display: flex;
+
+        >Li {
+            margin: 0 1.5rem;
+
+            @media (max-width: 768px) {
+                margin: 1rem 0;
+            }
+
+            >a {
+                position: relative;
+                font-weight: 500;
+                font-weight: 500;
+                font-family: 'Roboto', sans-serif;
+                transition: all 250ms;
+                color: #efefef;
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    display: block;
+                    height: 2px;
+                    width: 0%;
+                    background-color: #ffc400;
+                    transition: all ease-in-out 200ms;
+                }
+
+                &:hover {
+                    color: #ffc400;
+                }
+
+                &:hover::after {
+                    width: 100%;
+                }
+            }
+        }
+
+        @media (max-width: 768px) {
+            height: 100%;
+            padding: 7rem 2rem;
+            position: fixed;
+            top: 0%;
+            right: -100%;
+            flex-direction: column;
+            background: #161616;
+            transition: all 200ms;
+        }
+    }
+
+    .active-menu {
+        top: 0%;
+        right: 0%;
+    }
+
+    .mobile-menu {
+        display: none;
+
+        @media (max-width: 768px) {
+            display: block;
+            color: #fff;
+            font-size: 2rem;
+            z-index: 10;
+        }
+    }
+
+    @media (max-width: 768px) {
+        padding: 0 2%;
+        justify-content: space-between;
+
+    }
+}
+
+
+
+
+// Footer 
+
+footer {
+    height: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    >p {
+        font-size: smaller;
+        // font-weight: 500;
+        color: #fff;
+
+        >span {
+            color: #ffc400;
+        }
+    }
+}

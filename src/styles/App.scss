@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;600;700&family=Roboto:wght@300;400;500;700;900&display=swap');
+
+
+@import "Home";
+@import "Layout";
+@import "Exchanges";
+@import "Coins";
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    font-family: 'Roboto', 'system-ui';
+
+}
+
+body {
+    min-height: 100vh;
+    width: 100%;
+    background: linear-gradient(169deg, rgba(0, 0, 0, .95), rgba(0, 0, 0, 0.98)), url('https://images.pexels.com/photos/159888/pexels-photo-159888.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    overflow-x: hidden;
+}
+
+main {
+    min-height: 85vh;
+}
+
+span {
+    color: #fff;
+}
+
+
+::-webkit-scrollbar {
+    background: #000;
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #212121;
+    border-radius: 10px;
+
+}
+
+
+// Loader Component
+
+.loader-main {
+    height: 85vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    >.spinner {
+        --size: 30px;
+        --first-block-clr: #fff;
+        --second-block-clr: #fed500;
+        --clr: #111;
+        width: 100px;
+        height: 100px;
+        position: relative;
+
+        &::after,
+        &::before {
+            box-sizing: border-box;
+            position: absolute;
+            content: "";
+            width: var(--size);
+            height: var(--size);
+            top: 50%;
+            animation: up 2.4s cubic-bezier(0, 0, 0.24, 1.21) infinite;
+            left: 50%;
+            background: var(--first-block-clr);
+        }
+
+        &::after {
+            background: var(--second-block-clr);
+            top: calc(50% - var(--size));
+            left: calc(50% - var(--size));
+            animation: down 2.4s cubic-bezier(0, 0, 0.24, 1.21) infinite;
+        }
+
+
+    }
+
+    @keyframes down {
+
+        0%,
+        100% {
+            transform: none;
+        }
+
+        25% {
+            transform: translateX(100%);
+        }
+
+        50% {
+            transform: translateX(100%) translateY(100%);
+        }
+
+        75% {
+            transform: translateY(100%);
+        }
+    }
+
+    @keyframes up {
+
+        0%,
+        100% {
+            transform: none;
+        }
+
+        25% {
+            transform: translateX(-100%);
+        }
+
+        50% {
+            transform: translateX(-100%) translateY(-100%);
+        }
+
+        75% {
+            transform: translateY(-100%);
+        }
+    }
+
+}
+
+// Switch
+
+.currency-switches {
+    margin: 4% 0;
+    padding: 0 4%;
+    display: flex;
+
+    >div {
+        margin: 0 1rem 0 0;
+        display: flex;
+
+        >span {
+            margin-left: 4px;
+        }
+    }
+}
+
+// Error Component
+
+.error-pg-main {
+    display: flex;
+    justify-content: center;
+    padding: 10% 0;
+
+    >.error-box {
+        height: 4rem;
+        width: 70vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #ffabac;
+        border-radius: 3px;
+
+        >img {
+            width: 3vmax;
+            margin-right: 2%;
+        }
+
+        >p {
+            color: #000;
+            font-size: 1.2vmax;
+            font-family: 'Poppins';
+            font-weight: 500;
+
+        }
+    }
+}
